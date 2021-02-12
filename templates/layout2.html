@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	
+
+	<style>
+		#heading{
+			background-color: #77C9D4;
+			font-family: Ravie;
+			text-align: center;
+		    color: black;
+		    height: 55px;
+		    font-size: 30px;
+		    
+        }
+        .topnav {
+	        overflow: hidden;
+	        background-color:#57BC90 ;
+		}
+
+	    .topnav a {
+	    	float: right;
+	    	display: block;
+	    	color: black;
+	    	text-align: center;
+	    	padding: 14px 16px;
+	    	text-decoration: none;
+	    	font-size: 17px;
+		}
+
+		.topnav a:hover {
+			
+			color: blue;
+			
+		}
+		.topnav p{
+			font-size: 17px;
+			float: right;
+			margin-top: 13px;
+			color: #17252A;
+		}
+
+		
+
+		.topnav .search-container {
+			float: left;
+		}
+
+		.topnav input[type=text] {
+			padding: 6px;
+			margin-top: 8px;
+			font-size: 17px;
+			border: none;
+			margin-left: 8px;
+			width: 300px;
+			border-radius: 3px;
+
+		}
+
+		.topnav .search-container button {
+			float: right;
+			padding: 6px 10px;
+			margin-top: 8px;
+			margin-right: 16px;
+			background: #ddd;
+			font-size: 17px;
+			border: none;
+			cursor: pointer;
+		    border-radius: 3px;
+
+
+		}
+
+		.topnav .search-container button:hover {
+			background: #ccc;
+		}
+		@media screen and (max-width: 600px) {
+				.topnav .search-container {
+				float: none;
+			}
+		  .topnav a, .topnav input[type=text], .topnav .search-container button {
+	  	float: none;
+  	display: block;
+  	text-align: left;
+  	width: 100%;
+  	margin: 0;
+  	padding: 14px;
+  }
+  .topnav input[type=text] {
+  	border: 1px solid #ccc;  
+  }
+}
+           
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {background-color: #f2f2f2;}
+
+td a:hover {
+	text-decoration: none;
+cursor: pointer;
+}
+td a{
+	color: black;
+}
+		
+	</style>
+
+
+</head>
+<body>
+	<div id="heading">
+		BOOKalliance
+	</div>
+	<div class="topnav">
+		<div class="search-container">
+    <form action="{{url_for('search')}}" method="post">
+      <input type="text" placeholder="Search title/author/isbn" name="search">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+  
+  <a href="{{url_for('logout')}}">| Logout</a>
+  <p> Hey {{ username1 }}</p>
+
+ </div>
+ <p style="color: red; text-align: center;">{{ message }}</p>
+  
+	{% block body %}
+    
+
+    {% endblock %}
+
+</body>
+</html>

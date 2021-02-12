@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{% block title %}{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+	<style> 
+		div.box{
+			
+           
+			margin: 100px auto;
+			border: 2px solid lightblue;
+			width: 35%;
+			height: 320px;
+			border-radius: 5px;
+			text-align: center;
+			
+
+		}
+		#heading{
+			background-color: #77C9D4;
+			font-family: Ravie;
+			text-align: center;
+		    color: black;
+		    height: 55px;
+		    font-size: 30px;
+	
+        }
+
+
+        input {
+            border: 1px solid lightblue;
+            border-radius: 4px;
+            width: 30%;
+            height: 31px;
+        }
+        h1{
+        	text-align: center;
+        	font-family: centaur;
+        }
+		
+	</style>
+</head>
+<body>
+	<div id="heading">
+		BOOKalliance
+	</div>
+	<br>
+	<h1>WELCOME</h1>
+
+    <div class="box">
+    	
+{% block body %}
+
+{% endblock %}
+</div>
+
+
+</body>
+</html>

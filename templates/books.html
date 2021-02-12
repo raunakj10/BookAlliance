@@ -1,0 +1,36 @@
+{% extends "layout2.html" %}
+
+
+{% block title %}
+books
+{% endblock %}
+
+
+{% block body %}
+
+<div class="container">
+    {% if results %}
+    click on the title to get details about the book
+    
+<table>
+  <tbody>
+    <tr>
+        <th>Isbn</th>
+        <th>Title</th>
+        <th>Author</th>
+        <th>Year</th>
+
+    </tr>
+    {% for result in results %}
+    <tr>
+      <td>{{ result.isbn }}</td>
+      <td><a href="{{ url_for('details',isbn=result.isbn)}}">{{ result.title }}</a></td>
+      <td>{{ result.author }}</td>
+       <td>{{ result.year }}</td>
+    </tr>
+    {% endfor %}
+  </tbody>
+</table>
+{% endif %}
+</div>
+{% endblock %}

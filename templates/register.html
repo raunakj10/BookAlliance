@@ -1,0 +1,23 @@
+{% extends "layout1.html" %}
+
+
+{% block title %}
+register
+{% endblock %}
+{% block body %}
+<h1>Register</h1>
+or <a href="{{url_for('index')}}">login </a><br><br>
+<form method="post" action="{{url_for('registration')}}" >
+Username<input type="text" name="name" placeholder="Username"><br><br>
+{% for usrname in usernames %}
+{% if name==usrname %}
+<p> username alredy exists</p>
+{% endif %}
+{% endfor %}
+Password<input type="password" name="password" placeholder="Password"><br><br>
+<p style="color: red;">{{message}}</p>
+<button type="submit" class="btn btn-primary">Submit</button>
+</form>
+{% endblock %}
+
+
